@@ -1,0 +1,27 @@
+.btn {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+
+.koncertCard {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.icon {
+  margin-right: 1.5rem;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: lightgray;
+}
+
+.aboutTextWrapper {
+  margin-bottom: 5rem;
+}

@@ -1,0 +1,26 @@
+.wrapper {
+    margin-bottom: 2em;
+    display: inline-block;
+  }
+
+  .textWrapper {
+    background-color: white;
+    color: black;
+    padding: 1rem 0 1.5rem 0;
+  }
+
+  .singerName {
+    margin: auto 0 0 15px;
+    font-size: 19px;
+    color: black!important;
+    font-weight: bold;
+  }
+
+  .singerPart {
+    margin: 0 0 0 15px;
+    color: black !important;
+    font-weight: normal;
+
+  }
+
+ 

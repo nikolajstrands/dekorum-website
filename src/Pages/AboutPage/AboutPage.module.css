@@ -1,0 +1,14 @@
+.textWrapper p {
+    text-align: left;
+    hyphens: auto;
+}
+
+@media (max-width: 767px) {
+    .singerWrapper {
+        padding: 0;
+    }
+
+    .imageWrapper {
+        margin-bottom: 30px;
+    }
+}

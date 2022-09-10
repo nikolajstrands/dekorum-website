@@ -1,0 +1,50 @@
+.ribbon {
+    position: relative;
+    z-index: 3;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.ribbon:before {
+    background: inherit;
+    top: 0;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skewY(-4deg);
+    transform-origin: 0 0;
+    z-index: -1;
+}
+
+.light {
+    background: rgba(245, 245, 245, 1);
+    color: black;
+}
+
+.dark {
+    background: rgba(24, 24, 24, 1);
+    color: #fff;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto 0 auto;
+    padding: 60px 0 60px 0;
+}
+
+@media (max-width: 767px) {
+    .wrapper {
+        width: 85%;
+    }
+}
+
+.light p {
+    color: black;
+}
+
+.dark p {
+    color: white;
+}

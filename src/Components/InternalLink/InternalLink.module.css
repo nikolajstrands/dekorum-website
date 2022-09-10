@@ -1,0 +1,13 @@
+.link {
+    float: right;
+    text-decoration: none;
+    color: inherit;
+}
+
+.link:hover {
+    color:lightgray;
+}
+
+.icon {
+    margin-left: 3px;
+}
