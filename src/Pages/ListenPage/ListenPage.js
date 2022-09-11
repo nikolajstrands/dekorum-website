@@ -41,7 +41,7 @@ export default function ListenPage() {
             <Ribbon light={false} header="Vores indspilninger">
                 <FadeInWhenVisible direction="left">
                     <p>Vi har indtil videre udgivet fire indspilninger, som kan høres på alle større streamingtjenester. Musik af Mulden er desuden udgivet som fysisk cd.</p>
-                    <p>Du kan læse mere om indspilninger under <a href="">koncertprojekter</a></p>
+                    <p>Du kan læse mere om indspilninger under <a href="/koncerter">koncertprojekter</a></p>
                     <Row>
                         <Col xs={12} sm={6}>
                             <div className={styles.spotifyWrapper}>

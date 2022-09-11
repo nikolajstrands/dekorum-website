@@ -5,3 +5,11 @@
 .projectHeader {
     text-align: left;
 }
+
+.smallCol {
+    padding: 0!important;
+}
+
+.smallColsContainer {
+    width: 90%;
+}

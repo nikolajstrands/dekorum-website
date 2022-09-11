@@ -18,6 +18,16 @@ export default function FadeInWhenVisible({ direction, children }) {
       visible: {opacity: 1, x: 0 },
       hidden: {opacity: 0, x: -20 }
     }
+  } else if (direction === "top-left") {
+    variants = {
+      visible: {opacity: 1, x: 0, y: 0 },
+      hidden: {opacity: 0, x: -20, y: -20 }
+    } 
+  } else if (direction === "bottom-right") {
+    variants = {
+      visible: {opacity: 1, x: 0, y: 0 },
+      hidden: {opacity: 0, x: 20, y: 20 }
+    }
   }
 
   return (

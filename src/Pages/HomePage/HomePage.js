@@ -9,7 +9,7 @@ import ConcertCard from "../../Components/ConcertCard/ConcertCard";
 import { Facebook, Instagram, Youtube, Spotify } from "react-bootstrap-icons";
 import InternalLink from "../../Components/InternalLink/InternalLink";
 
-export default function HomePage({data}) {
+export default function HomePage({ data }) {
     const imageFileName = "IMG_9629.jpg";
 
     const currentConcerts = data.concerts;
@@ -18,7 +18,7 @@ export default function HomePage({data}) {
         <PageFadeIn>
             <main>
                 <TopImage imageFileName={imageFileName} header="Vokalensemblet Dekorum">
-                    <h3 style={{ "color": "white" }}>– en skabende del af det danske musikliv</h3>
+                    <h3 style={{ "color": "white" }}>– en skabende del af det danske korliv</h3>
                     <div className="m-4">
                         <a className={styles.link} target="_blank" href="https://www.facebook.com/VokalensembletDekorum">
                             <Facebook className={styles.icon} size={36} />
@@ -45,16 +45,16 @@ export default function HomePage({data}) {
                                 </Col>
                             </Row>
                             <Row className="mt-5">
-                                <Col xs={12} md={6} className="mb-5">                   
-                                        <Ratio aspectRatio="16x9">
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/_H6oPSkFgDM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
-                                        </Ratio>
-                                    </Col>
-                                    <Col xs={12} md={6} className="mb-5">
-                                        <Ratio aspectRatio="16x9">
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/LgHwKmp5-Yw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
-                                        </Ratio>
-                                    </Col>                            
+                                <Col xs={12} md={6} className="mb-5">
+                                    <Ratio aspectRatio="16x9">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_H6oPSkFgDM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                                    </Ratio>
+                                </Col>
+                                <Col xs={12} md={6} className="mb-5">
+                                    <Ratio aspectRatio="16x9">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LgHwKmp5-Yw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                                    </Ratio>
+                                </Col>
                             </Row>
                             <div className="mb-5">
                                 <InternalLink to="lyt" text="Se og lyt til mere" eventKey="12" />
@@ -64,21 +64,10 @@ export default function HomePage({data}) {
                 </Ribbon>
                 <Ribbon light={false} header="Om os">
                     <FadeInWhenVisible direction="left">
-                        <p><strong>"Et af Københavns mest spændende musikalske bekendtskaber" - Some dude</strong></p>
-                        <p><strong>"Skidegodt kor!" - En anden dude</strong></p>
                         <div className={styles.aboutTextWrapper}>
-                            <p>Vokalensemblet Dekorum er en ambitiøs gruppe bestående af unge, erfarne korsangere. Med et erklæret mål
-                                om at være en skabende del af det danske musikliv arbejder koret for at bidrage med noget nyt og
-                                spændende ved hver eneste koncert.</p>
-                            <p>Om det skabende består i opførelser af overset eller glemt musik, nye arrangementer af det kendte og
-                                elskede eller helt ny musik komponeret specielt til gruppen, varierer. Men fælles for det hele er en
-                                anderledes måde at præsentere klassisk kormusik på – i al beskedenhed.</p>
-                            <p>Siden dets undfangelse i efteråret 2016 har Vokalensemblet Dekorum uropført Ulrik Vestis Plasticsolen –
-                                koncert for klaver og kor over Michael Strunges digt af samme navn – samt søsat det løbende projekt
-                                Musik af mulden, der søger at skabe forbindelse mellem klassisk kor og dansk folkemusik gennem nye
-                                arrangementer leveret af folkemusikere fra hele landet.</p>
-                            <p>Som en del af målet om at præsentere klassisk kormusik på en ny måde synger Vokalensemblet Dekorum oftest
-                                uden dirigent – og uden noder.</p>
+                            <p><strong>Vokalensemblet Dekorum</strong> er en ambitiøs gruppe bestående af unge, erfarne korsangere. Med et erklæret mål om at være en skabende del af det danske musikliv arbejder koret for at bidrage med noget nyt og spændende ved hver eneste koncert.</p>
+                            <p>Om det skabende består i opførelser af overset eller glemt musik, nye arrangementer af det kendte og elskede eller helt ny musik komponeret specielt til gruppen, varierer. Men fælles for det hele er en anderledes måde at præsentere klassisk kormusik på – i al beskedenhed.</p>
+                            <p>Vokalensemblet, der ledes af <strong>Bo Asger Kristensen</strong>, arbejder sammen med nogle af landets mest talentfulde komponister og musikere og har flere udgivelser bag sig.</p>
                             <div className="mb-5">
                                 <InternalLink to="om-os" text="Læs mere om koret" eventKey="10" />
                             </div>
