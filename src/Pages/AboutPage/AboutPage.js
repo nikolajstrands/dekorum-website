@@ -11,7 +11,7 @@ import FadeInWhenVisible from "../../Animations/FadeInWhenVisible/FadeInWhenVisi
 export default function AboutPage({ data }) {
 
     const singers = data.singers;
-    const imageFileName = "IMG_9629.jpg";
+    const imageFileName = "2020-07_Indspilning-Aarhus_0027-filter.jpg";
 
     return (
         <PageFadeIn>
