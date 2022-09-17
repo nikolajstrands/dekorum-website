@@ -23,5 +23,15 @@
 }
 
 .aboutTextWrapper {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 767px) {
+  .aboutTextWrapper {
+      margin: 0 5% 40px 5%
+  }
+}
+
+.aboutLinkWrapper {
   margin-bottom: 5rem;
 }

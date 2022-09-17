@@ -40,34 +40,30 @@ export default function ListenPage() {
 
             <Ribbon light={false} header="Vores indspilninger">
                 <FadeInWhenVisible direction="left">
-                    <p>Vi har indtil videre udgivet fire indspilninger, som kan høres på alle større streamingtjenester. Musik af Mulden er desuden udgivet som fysisk cd.</p>
-                    <p>Du kan læse mere om indspilninger under <a href="/koncerter">koncertprojekter</a></p>
+                    <p>Vi har indtil videre udgivet fire indspilninger, som kan høres på alle større streamingtjenester. Musik af Mulden er desuden udgivet som fysisk cd. Du kan læse mere om indspilninger under <a href="/koncerter">koncertprojekter</a>.</p>
                     <Row>
                         <Col xs={12} sm={6}>
                             <div className={styles.spotifyWrapper}>
-                                <iframe title="spotify" src="https://open.spotify.com/embed/album/1C7GwvyVKnr8LP9DSK4Kyf?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" />
+                                <iframe title="spotify-album one" src="https://open.spotify.com/embed/album/1C7GwvyVKnr8LP9DSK4Kyf?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" />
                             </div>
                         </Col>
                         <Col xs={12} sm={6}>
                             <div className={styles.spotifyWrapper}>
-                                <iframe src="https://open.spotify.com/embed/album/1lK56p818LMvgI4YoQzc9x?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                                <iframe title="spotify-album tow" src="https://open.spotify.com/embed/album/1lK56p818LMvgI4YoQzc9x?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                             </div>
                         </Col>
                         <Col xs={12} sm={6}>
                             <div className={styles.spotifyWrapper}>
-                                <iframe src="https://open.spotify.com/embed/album/2scr13F8U3GwpSyVVyv66I?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                                <iframe title="spotify-album three" src="https://open.spotify.com/embed/album/2scr13F8U3GwpSyVVyv66I?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                             </div>
                         </Col>
                         <Col xs={12} sm={6}>
                             <div className={styles.spotifyWrapper}>
-                                <iframe src="https://open.spotify.com/embed/album/6pfed8952Wh5mSM8wcUqt5?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                                <iframe title="spotify-album four" src="https://open.spotify.com/embed/album/6pfed8952Wh5mSM8wcUqt5?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                             </div>
                         </Col>
-
-
                     </Row>
                 </FadeInWhenVisible>
-
             </Ribbon>
             <Footer light />
         </PageFadeIn>

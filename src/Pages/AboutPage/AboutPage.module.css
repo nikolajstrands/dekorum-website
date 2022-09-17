@@ -12,3 +12,9 @@
         margin-bottom: 30px;
     }
 }
+
+@media (min-width: 767px) {
+    .textWrapper {
+        margin: 0 5% 50px 5%
+    }
+}

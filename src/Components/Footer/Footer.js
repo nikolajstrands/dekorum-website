@@ -18,16 +18,16 @@ export default function Footer({ light }) {
                         <FadeInWhenVisible direction={"left"}>
                             <h3 class={styles.columnHeader}>Følg os</h3>
                             <p>
-                                <a className={styles.link} target="_blank" href="https://www.facebook.com/VokalensembletDekorum">
+                                <a className={styles.link} target="_blank" rel="noreferrer" href="https://www.facebook.com/VokalensembletDekorum">
                                     <Facebook className={styles.icon} size={24} />
                                 </a>
-                                <a className={styles.link} target="_blank" href="https://www.instagram.com/vokalensembletdekorum/">
+                                <a className={styles.link} target="_blank" rel="noreferrer" href="https://www.instagram.com/vokalensembletdekorum/">
                                     <Instagram className={styles.icon} size={24} />
                                 </a>
-                                <a className={styles.link} target="_blank" href="https://www.youtube.com/channel/UCZXCFhjbzmIWDl7616uKHEg">
+                                <a className={styles.link} target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCZXCFhjbzmIWDl7616uKHEg">
                                     <Youtube className={styles.icon} size={24} />
                                 </a>
-                                <a className={styles.link} target="_blank" href="https://open.spotify.com/artist/0YNA7fmmSojGraBPwsBbP0?si=Yu45GcmCR1y46DMnf6RtVw">
+                                <a className={styles.link} target="_blank" rel="noreferrer" href="https://open.spotify.com/artist/0YNA7fmmSojGraBPwsBbP0?si=Yu45GcmCR1y46DMnf6RtVw">
                                     <Spotify className={styles.icon} size={24} />
                                 </a>
                             </p>
@@ -37,10 +37,10 @@ export default function Footer({ light }) {
                         <FadeInWhenVisible direction={"right"}>
                             <h3 class={styles.columnHeader}>Vokalensemblet Dekorum</h3>
                             <p>
-                                <a className={styles.link} target="_blank" href="tel:4521258566">
+                                <a className={styles.link} target="_blank" rel="noreferrer" href="tel:4521258566">
                                     <Telephone className={styles.icon} /> (+45) 21 25 85 66<br />
                                 </a>
-                                <a className={styles.link} target="_blank" href="mailto:vokalensembletdekorum@gmail.com">
+                                <a className={styles.link} target="_blank" rel="noreferrer" href="mailto:vokalensembletdekorum@gmail.com">
                                     <Envelope className={styles.icon} />vokalensembletdekorum@gmail.com<br />
                                 </a>
                             </p>

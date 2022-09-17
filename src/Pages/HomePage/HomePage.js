@@ -20,16 +20,16 @@ export default function HomePage({ data }) {
                 <TopImage imageFileName={imageFileName} header="Vokalensemblet Dekorum">
                     <h3 style={{ "color": "white" }}>– en skabende del af det danske korliv</h3>
                     <div className="m-4">
-                        <a className={styles.link} target="_blank" href="https://www.facebook.com/VokalensembletDekorum">
+                        <a className={styles.link} target="_blank" rel="noreferrer" href="https://www.facebook.com/VokalensembletDekorum">
                             <Facebook className={styles.icon} size={36} />
                         </a>
-                        <a className={styles.link} target="_blank" href="https://www.instagram.com/vokalensembletdekorum/">
+                        <a className={styles.link} target="_blank" rel="noreferrer" href="https://www.instagram.com/vokalensembletdekorum/">
                             <Instagram className={styles.icon} size={36} />
                         </a>
-                        <a className={styles.link} target="_blank" href="https://www.youtube.com/channel/UCZXCFhjbzmIWDl7616uKHEg">
+                        <a className={styles.link} target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCZXCFhjbzmIWDl7616uKHEg">
                             <Youtube className={styles.icon} size={36} />
                         </a>
-                        <a className={styles.link} target="_blank" href="https://open.spotify.com/artist/0YNA7fmmSojGraBPwsBbP0?si=Yu45GcmCR1y46DMnf6RtVw">
+                        <a className={styles.link} target="_blank" rel="noreferrer" href="https://open.spotify.com/artist/0YNA7fmmSojGraBPwsBbP0?si=Yu45GcmCR1y46DMnf6RtVw">
                             <Spotify className={styles.icon} size={36} />
                         </a>
                     </div>
@@ -64,14 +64,16 @@ export default function HomePage({ data }) {
                 </Ribbon>
                 <Ribbon light={false} header="Om os">
                     <FadeInWhenVisible direction="left">
-                        <div className={styles.aboutTextWrapper}>
-                            <p><strong>Vokalensemblet Dekorum</strong> er en ambitiøs gruppe bestående af unge, erfarne korsangere. Med et erklæret mål om at være en skabende del af det danske musikliv arbejder koret for at bidrage med noget nyt og spændende ved hver eneste koncert.</p>
-                            <p>Om det skabende består i opførelser af overset eller glemt musik, nye arrangementer af det kendte og elskede eller helt ny musik komponeret specielt til gruppen, varierer. Men fælles for det hele er en anderledes måde at præsentere klassisk kormusik på – i al beskedenhed.</p>
-                            <p>Vokalensemblet, der ledes af <strong>Bo Asger Kristensen</strong>, arbejder sammen med nogle af landets mest talentfulde komponister og musikere og har flere udgivelser bag sig.</p>
-                            <div className="mb-5">
+                        <Container>
+                            <div className={styles.aboutTextWrapper}>
+                                <p><strong>Vokalensemblet Dekorum</strong> er en ambitiøs gruppe bestående af unge, erfarne korsangere. Med et erklæret mål om at være en skabende del af det danske musikliv arbejder koret for at bidrage med noget nyt og spændende ved hver eneste koncert.</p>
+                                <p>Om det skabende består i opførelser af overset eller glemt musik, nye arrangementer af det kendte og elskede eller helt ny musik komponeret specielt til gruppen, varierer. Men fælles for det hele er en anderledes måde at præsentere klassisk kormusik på – i al beskedenhed.</p>
+                                <p>Vokalensemblet, der ledes af <strong>Bo Asger Kristensen</strong>, arbejder sammen med nogle af landets mest talentfulde komponister og musikere og har flere udgivelser bag sig.</p>
+                            </div>
+                            <div className={styles.aboutLinkWrapper}>
                                 <InternalLink to="om-os" text="Læs mere om koret" eventKey="10" />
                             </div>
-                        </div>
+                        </Container>
                     </FadeInWhenVisible>
                 </Ribbon>
                 <Ribbon light={true} header="Kommende koncerter">
@@ -82,40 +84,11 @@ export default function HomePage({ data }) {
                                     <ConcertCard key={concert.id} concert={concert} />
                                 </Col>)}
                         </Row>
-
-                        <div className="text-center mb-5">
+                        <div className="mb-5">
                             <InternalLink to="koncerter" text="Læs mere om koncerter" eventKey="11" />
                         </div>
                     </FadeInWhenVisible>
                 </Ribbon>
-                {/* <Ribbon light={false}>
-                    <h1 class="text-center mt-4">Kontakt os</h1>
-                    <p class="text-center">
-                        For booking eller andre forespørgsler, skriv, ring eller brug kontaktformularen nedenfor.
-                    </p>
-                    <div>
-                        <div class="row">
-                            <div class="col-12 col-md-4 text-center">
-                                <h3>Booking</h3>
-                                <p>
-                                    21 25 85 66<br />
-                                    vokalensembletdekorum@gmail.com
-                                </p>
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <input type="text" class="form-control m-2" id="name" placeholder="Navn" />
-                                <input type="email" class="form-control m-2" id="phone" placeholder="Email" />
-                                <input type="tel" class="form-control m-2" id="email" placeholder="Telefon" />
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <textarea class="form-control m-2" id="exampleFormControlTextarea1" rows="5"></textarea>
-                            </div>
-                            <div class="col-12 col-md-8 offset-md-4 text-center">
-                                <button type="submit" class="btn btn-secondary m-2">Send</button>
-                            </div>
-                        </div>
-                    </div>
-                </Ribbon> */}
             </main>
             <Footer light={false} />
         </PageFadeIn >
