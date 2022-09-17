@@ -1,5 +1,4 @@
 import styles from "./TopImage.module.css";
-import Image from "react-bootstrap/Image";
 
 export default function TopImage({ imageFileName, header, children }) {
 

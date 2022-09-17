@@ -3,7 +3,7 @@ import { Image } from "react-bootstrap";
 
 export default function ConcertCard({ concert }) {
   return (
-    <a href={concert.link} target="_blank">
+    <a href={concert.link} target="_blank" rel="noreferrer">
       <div className={styles.wrapper}>
         <div className={styles.imageWrapper}>
           <Image fluid src={process.env.PUBLIC_URL + "/assets/" + concert.imageFileName} />
