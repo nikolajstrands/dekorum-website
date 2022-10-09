@@ -18,3 +18,7 @@
 .smallColsContainer {
     width: 60%;
 }
+
+.textLink, .textLink:hover {
+    color: white;
+}

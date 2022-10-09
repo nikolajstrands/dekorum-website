@@ -5,9 +5,9 @@ import Ribbon from "../../Components/Ribbon/Ribbon";
 import Footer from "../../Components/Footer/Footer";
 import PageFadeIn from "../../Animations/PageFadeIn/PageFadeIn";
 import FadeInWhenVisible from "../../Animations/FadeInWhenVisible/FadeInWhenVisible";
-import ConcertCard from "../../Components/ConcertCard/ConcertCard";
 import { Facebook, Instagram, Youtube, Spotify } from "react-bootstrap-icons";
 import InternalLink from "../../Components/InternalLink/InternalLink";
+import ConcertList from "../../Components/ConcertList/ConcertList";
 
 export default function HomePage({ data }) {
     const imageFileName = "IMG_9629.jpg";
@@ -40,7 +40,7 @@ export default function HomePage({ data }) {
                             <Row>
                                 <Col xs={12}>
                                     <Ratio aspectRatio="16x9">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLkRy8NiDi5wo53Pcx0tQtSpko8q-As9zP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLkRy8NiDi5wo53Pcx0tQtSpko8q-As9zP" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                     </Ratio>
                                 </Col>
                             </Row>
@@ -57,7 +57,7 @@ export default function HomePage({ data }) {
                                 </Col>
                             </Row>
                             <div className="mb-5">
-                                <InternalLink to="lyt" text="Se og lyt til mere" eventKey="12" />
+                                <InternalLink to="lyt" text="Se og lyt til mere" />
                             </div>
                         </Container>
                     </FadeInWhenVisible>
@@ -70,22 +70,17 @@ export default function HomePage({ data }) {
                                 <p>Om det skabende består i opførelser af overset eller glemt musik, nye arrangementer af det kendte og elskede eller helt ny musik komponeret specielt til gruppen, varierer. Men fælles for det hele er en anderledes måde at præsentere klassisk kormusik på – i al beskedenhed.</p>
                                 <p>Vokalensemblet, der ledes af <strong>Bo Asger Kristensen</strong>, arbejder sammen med nogle af landets mest talentfulde komponister og musikere og har flere udgivelser bag sig.</p>
                             </div>
-                            <div className={styles.aboutLinkWrapper}>
-                                <InternalLink to="om-os" text="Læs mere om koret" eventKey="10" />
+                            <div className={styles.linkWrapper}>
+                                <InternalLink to="om-os" text="Læs mere om koret" />
                             </div>
                         </Container>
                     </FadeInWhenVisible>
                 </Ribbon>
                 <Ribbon light={true} header="Kommende koncerter">
                     <FadeInWhenVisible direction="left">
-                        <Row>
-                            {currentConcerts.map((concert, index) =>
-                                <Col key={index} xs={12} sm={6} md={3}>
-                                    <ConcertCard key={concert.id} concert={concert} />
-                                </Col>)}
-                        </Row>
-                        <div className="mb-5">
-                            <InternalLink to="koncerter" text="Læs mere om koncerter" eventKey="11" />
+                        <ConcertList concerts={currentConcerts} />
+                        <div className={styles.linkWrapper}>
+                            <InternalLink to="koncerter" text="Læs mere om koncerter" />
                         </div>
                     </FadeInWhenVisible>
                 </Ribbon>

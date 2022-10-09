@@ -54,12 +54,12 @@ export default function ContactPage() {
                         <Image fluid width={300} className={styles.center} src={process.env.PUBLIC_URL + "/assets/download2.jpeg"} />
                         
                         <p>Øvrige oplysninger:</p>
-                        <p className={styles.center}>
-                            <div>CVR 35918426</div>
-                            <div>
+                        <div className={styles.center}>
+                            <p className={styles.centeredParagraph}>CVR 35918426</p>
+                            <p className={styles.centeredParagraph}>
                                 Bankkonto: xxxx xxxxxxxxxxx
-                            </div>
-                        </p>
+                            </p>
+                        </div>
 
 
 

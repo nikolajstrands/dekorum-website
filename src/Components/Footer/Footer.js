@@ -16,7 +16,7 @@ export default function Footer({ light }) {
                     <Col md={4} />
                     <Col md={4}>
                         <FadeInWhenVisible direction={"left"}>
-                            <h3 class={styles.columnHeader}>Følg os</h3>
+                            <h3 className={styles.columnHeader}>Følg os</h3>
                             <p>
                                 <a className={styles.link} target="_blank" rel="noreferrer" href="https://www.facebook.com/VokalensembletDekorum">
                                     <Facebook className={styles.icon} size={24} />
@@ -35,7 +35,7 @@ export default function Footer({ light }) {
                     </Col>
                     <Col md={4}>
                         <FadeInWhenVisible direction={"right"}>
-                            <h3 class={styles.columnHeader}>Vokalensemblet Dekorum</h3>
+                            <h3 className={styles.columnHeader}>Vokalensemblet Dekorum</h3>
                             <p>
                                 <a className={styles.link} target="_blank" rel="noreferrer" href="tel:4521258566">
                                     <Telephone className={styles.icon} /> (+45) 21 25 85 66<br />

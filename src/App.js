@@ -32,12 +32,12 @@ export default function App() {
       <ScrollToTop />
         <AnimatePresence exitBeforeEnter>
           <Routes location={location} key={location.pathname}>
-            <Route path="/home" exact element={<div>Test</div>} />
-            <Route path="/lyt" exact element={<ListenPage />} />
-            <Route path="/om-os" exact element={<AboutPage data={data} />} />
-            <Route path="/koncerter" exact element={<ConcertsPage data={data} />} />
-            <Route path="/kontakt" exact element={<ContactPage />} />
-            <Route path="/" exact element={<HomePage data={data} />} />
+            <Route path="/home" element={<div>Test</div>} />
+            <Route path="/lyt" element={<ListenPage />} />
+            <Route path="/om-os" element={<AboutPage data={data} />} />
+            <Route path="/koncerter" element={<ConcertsPage data={data} />} />
+            <Route path="/kontakt" element={<ContactPage />} />
+            <Route path="/" element={<HomePage data={data} />} />
           </Routes>
         </AnimatePresence>
       </div>

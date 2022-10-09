@@ -5,3 +5,7 @@
 p {
     text-align: left;
 }
+
+.textLink, .textLink:hover {
+    color: white;
+}

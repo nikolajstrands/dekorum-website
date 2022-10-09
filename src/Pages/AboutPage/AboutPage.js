@@ -44,12 +44,12 @@ export default function AboutPage({ data }) {
             </Ribbon>
             <Ribbon light={true} header="Kunstnerisk ledelse">
                 <Row>
-                    <div class={`col-12 col-sm-6 col-md-6 ${styles.imageWrapper}`}>
+                    <div className={`col-12 col-sm-6 col-md-6 ${styles.imageWrapper}`}>
                         <FadeInWhenVisible direction="right">
                             <Image fluid width={500} className="mb-2" src={process.env.PUBLIC_URL + "/assets/Shaw_Musikhuset_3.4.png"} />
                         </FadeInWhenVisible>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-6 order-md-first">
+                    <div className="col-12 col-sm-6 col-md-6 order-md-first">
                         <FadeInWhenVisible direction="left">
                             <div className={styles.textWrapper}>
                                 <p>Vokalensemblet Dekorum har siden sin grundlæggelse været under kunstnerisk ledelse af <strong>Bo Asger Kristensen</strong>.</p>

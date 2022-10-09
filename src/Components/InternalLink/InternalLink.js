@@ -4,9 +4,9 @@ import styles from "./InternalLink.module.css";
 
 
 
-function InternalLink({ text, to, eventKey }) {
+function InternalLink({ text, to }) {
     return (
-        <NavLink className={styles.link} exact eventKey={eventKey} to={to} title={text}>
+        <NavLink className={styles.link} to={to} title={text}>
             {text} <ArrowRightCircle className={styles.icon} size={24} />
         </NavLink>
     );
