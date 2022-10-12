@@ -4,14 +4,14 @@ import TopImage from "../../Components/TopImage/TopImage";
 import Ribbon from "../../Components/Ribbon/Ribbon";
 import Footer from "../../Components/Footer/Footer";
 import { Image } from "react-bootstrap";
-// import { FileZip, Journal } from "react-bootstrap-icons";
+import { FileZip } from "react-bootstrap-icons";
 import { Envelope, Facebook, Instagram, Spotify, Telephone, Youtube } from "react-bootstrap-icons";
 import styles from "./ContactPage.module.css";
 
 
 export default function ContactPage() {
 
-    const imageFileName = "IMG_9629.jpg";
+    const imageFileName = "2020-07_Indspilning-Aarhus_0027-filter.jpg";
 
     return (
         <PageFadeIn>
@@ -52,12 +52,12 @@ export default function ContactPage() {
                             Vokalensemblet Dekorum er en non-profit organisation. Hvis du vil støtte vores kunstneriske arbejde, kan du donere til følgende MobilePay-nummer:
                         </p>
                         <Image fluid width={300} className={styles.center} src={process.env.PUBLIC_URL + "/assets/download2.jpeg"} />
-                        
+
                         <p>Øvrige oplysninger:</p>
                         <div className={styles.center}>
                             <p className={styles.centeredParagraph}>CVR 35918426</p>
                             <p className={styles.centeredParagraph}>
-                                Bankkonto: xxxx xxxxxxxxxxx
+                                Bankkonto: Nykredit 5471 1295456
                             </p>
                         </div>
 
@@ -66,15 +66,16 @@ export default function ContactPage() {
                     </div>
                 </FadeInWhenVisible>
             </Ribbon>
-            {/* <Ribbon light={false} header="Downloads">
+            <Ribbon light={false} header="Downloads">
                 <FadeInWhenVisible direction="left">
-                    <p>Her kan du downloade pressekit, projektkatalog m.v.<br />
-                        <FileZip size={24} />Download presskit<br />
-                        <Journal size={24} />Download projektkatalog
-                    </p>
+                    <div className={styles.center} >
+                        <a className={styles.link} target="_blank" rel="noreferrer" href={process.env.PUBLIC_URL + "/assets/downloads/dekorum-presse.zip"}>
+                            <FileZip className={styles.icon} size={24} />Download pressemateriale
+                        </a>
+                    </div>
                 </FadeInWhenVisible>
-            </Ribbon> */}
-            <Footer />
+            </Ribbon>
+            <Footer light />
         </PageFadeIn>
     );
 

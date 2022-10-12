@@ -11,7 +11,7 @@ export default function ConcertsPage({ data }) {
 
     const concerts = data.concerts;
 
-    const imageFileName = "Shaw_Musikhuset_1.3_color.jpg";
+    const imageFileName = "Shaw_Musikhuset_1.jpg";
 
     return (
         <PageFadeIn>
