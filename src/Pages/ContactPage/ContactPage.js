@@ -51,8 +51,9 @@ export default function ContactPage() {
                         <p>
                             Vokalensemblet Dekorum er en non-profit organisation. Hvis du vil støtte vores kunstneriske arbejde, kan du donere til følgende MobilePay-nummer:
                         </p>
-                        <Image fluid width={300} className={styles.center} src={process.env.PUBLIC_URL + "/assets/download2.jpeg"} />
-
+                        <a target="_blank" rel="noreferrer" href="https://www.mobilepay.dk/erhverv/betalingslink/betalingslink-svar?phone=22088&comment=St%C3%B8t%20vores%20arbejde">
+                            <Image fluid width={300} className={styles.center} src={process.env.PUBLIC_URL + "/assets/mobilepay.png"} />
+                        </a>
                         <p>Øvrige oplysninger:</p>
                         <div className={styles.center}>
                             <p className={styles.centeredParagraph}>CVR 35918426</p>
