@@ -33,6 +33,11 @@
                 <td><?php echo $concert["time"] ?></td> 
               </tr>
               <tr>
+                <th scope="row">Sted</th>
+                <td><?php echo $concert["place"] ?></td> 
+              </tr>
+              <tr>
+              <tr>
                 <th scope="row">Billedfil</th>
                 <td><?php echo $concert["imageFileName"] ?></td> 
               </tr>
@@ -52,7 +57,7 @@
           <input type="hidden" id="id" name="id" value=<?php echo($concert["id"]) ?> >
           <button class="btn btn-danger w-100 p-3 mb-3" type="submit">Slet</button>
         </form>
-        <form  method="post" action="edit_concert.php">
+        <form  method="get" action="edit_concert.php">
           <input type="hidden" id="id" name="id" value=<?php echo($concert["id"]) ?> >
           <button class="btn btn-primary w-100 p-3 mt-3">Rediger</button>
         </form>
