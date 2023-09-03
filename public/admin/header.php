@@ -10,7 +10,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="concerts.php">Dekorum administration</a>
+    <a class="navbar-brand" href="index.php">Dekorum administration</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -18,11 +18,12 @@
       <div class="navbar-nav">
         <a class="nav-link" href="concerts.php">Alle koncerter</a>
         <a class="nav-link" href="new_concert.php">Opret koncert</a>
-        <a class="nav-link disabled" href="#">Alle sangere</a>
-        <a class="nav-link disabled" href="#">Opret sanger</a>
+        <!-- <a class="nav-link disabled" href="#">Alle sangere</a>
+        <a class="nav-link disabled" href="#">Opret sanger</a> -->
       </div>
     </div>
   </div>
 </nav>
 
-<div class="m-3">
+<div class="m-5">
+  <div class="ms-5 me-5">

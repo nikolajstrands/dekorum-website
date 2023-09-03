@@ -8,6 +8,7 @@
       <div class="mb-3">
         <label for="title" class="form-label">Titel:</label>
         <input type="text" class="form-control" id="titel" aria-describedby="titleHelp" name="title">
+        <div id="titleHelp" class="form-text">F.eks. <em>Musik af mulden</em></div>
       </div>
       <div class="mb-3">
         <label for="date" class="form-label">Dato:</label>
@@ -19,19 +20,25 @@
       </div>
       <div class="mb-3">
         <label for="place" class="form-label">Sted:</label>
-        <input type="text" class="form-control" id="place" name="place">
+        <input type="text" class="form-control" id="place" name="place" aria-describedby="placeHelp" >
+        <div id="placeHelp" class="form-text">F.eks. <em>De gamles bys kirke</em></div>
+
       </div>
       <div class="mb-3">
         <label for="fileToUpload" class="form-label">Billedfil:</label>
-        <input type="file" class="form-control" id="fileToUpload" name="fileToUpload">
+        <input type="file" class="form-control" id="fileToUpload" name="fileToUpload" aria-describedby="fileToUploadHelp" >
+        <div id="fileToUploadHelp" class="form-text">Skal være jpg eller jpeg og størrelsen 580 x 380 pixel.</div>
       </div>
       <div class="mb-3">
         <label for="link" class="form-label">Link til event:</label>
-        <input type="text" class="form-control" id="link" name="link">
+        <input type="text" class="form-control" id="link" name="link" aria-describedby="linkHelp" >
+        <div id="linkHelp" class="form-text">F.eks. link til Facebook-event</div>
+
       </div>
       <div class="mb-3">
         <label for="admission" class="form-label">Entré:</label>
-        <input type="text" class="form-control" id="admission" name="admission">
+        <input type="text" class="form-control" id="admission" name="admission" aria-describedby="admissionHelp">
+        <div id="admissionHelp" class="form-text">F.eks. <em>Gratis adgang</em> eller <em>Entré: 80 kr.</em></div>
       </div>
       <button type="submit" class="btn btn-primary mt-3">Opret</button>
     </form>
