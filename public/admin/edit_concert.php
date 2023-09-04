@@ -93,7 +93,6 @@ if (!empty($_POST)) {
   } else {
 
     // Update data and image-file
-
     $target_dir = "../uploads/";
     $image_name = basename($_FILES["fileToUpload"]["name"]);
     $target_file = $target_dir . $image_name;
