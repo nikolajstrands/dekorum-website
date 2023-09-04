@@ -13,7 +13,12 @@ if (!empty($_POST)) {
         deleteConcertById($id);
 
 ?>
-        <p style='color: green'>Koncerten blev slettet!</p>
+
+<div class="alert alert-success" role="alert">
+    <strong>Koncerten blevet slettet!</strong> Du sendes tilbage til koncertsiden ...
+  </div>
+  <script type ='text/javascript'> setTimeout(() => window.location = "/admin/concerts.php", 1500);</script>
+
 <?php
     }
 }

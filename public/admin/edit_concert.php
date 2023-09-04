@@ -13,7 +13,9 @@ if (!empty($_GET)) {
 
     $concert_to_edit = getConcertById($id);
     $concert_date = substr($concert_to_edit["time"], 0, 10);
-    $concert_time = substr($concert_to_edit["time"], 11, 8);    
+    $concert_time = substr($concert_to_edit["time"], 11, 8); 
+    
+    $images = getOldImageNames();
 
 ?>
 
@@ -45,7 +47,21 @@ if (!empty($_GET)) {
           <input type="file" class="form-control" id="fileToUpload" name="fileToUpload" aria-describedby="fileToUploadHelp">
           <div id="fileToUploadHelp" class="form-text">Skal være jpg eller jpeg og størrelsen 580 x 380 pixel.</div>
         </div>
-        <input type="hidden" id="oldImageFileName" name="oldImageFileName" value=<?php echo $concert_to_edit["imageFileName"] ?>>
+
+        <div class="mb-3">
+        <label for="oldImage" class="form-label">Eller vælg allerede uploadet billede:</label>
+        <select class="form-select" aria-label="Default select example" id="oldImage" name="oldImage" aria-describedby="oldImageHelp">
+          <option value="0" <?php echo $concert_to_edit["imageFileName"] ? '' : 'selected' ?> >Vælg et billede ...</option>
+          <?php
+          foreach ($images as $image) {
+            $is_selected_text = $concert_to_edit["imageFileName"] == $image ? "selected" : "";
+            echo "<option value='" . $image . "' " . $is_selected_text . " >" . $image . "</option>";
+          }
+          ?>
+        </select>
+        <div id="oldImageHelp" class="form-text">Vælg et gammelt billede fra listen. (Ignoreres, hvis der uploades et nyt).</div>
+      </div>
+
         <div class="mb-3">
           <label for="link" class="form-label">Link til event:</label>
           <input type="text" class="form-control" id="link" name="link" aria-describedby="linkHelp" value="<?php echo $concert_to_edit["link"] ?>">
@@ -81,7 +97,7 @@ if (!empty($_POST)) {
       "title" => $_POST["title"],
       "time" => $_POST["date"] . "T" . $_POST["time"],
       "place" => $_POST["place"],
-      "imageFileName" => $_POST["oldImageFileName"],
+      "imageFileName" => $_POST["oldImage"] == "0" ? "" : $_POST["oldImage"],
       "link" => $_POST["link"],
       "admission" => $_POST["admission"],
       "published" => $published,
@@ -112,7 +128,14 @@ if (!empty($_POST)) {
       echo "Der skete en fejl ved upload af billede";
     }
   }
-  echo "<p style='color: green'>Koncerten blev opdateret!</p>";
+  ?>
+
+  <div class="alert alert-success" role="alert">
+    <strong>Koncerten blevet opdateret!</strong> Du sendes tilbage til koncertsiden ...
+  </div>
+  <script type ='text/javascript'> setTimeout(() => window.location = "/admin/concerts.php", 1500);</script>
+<?php
+
 }
 
 

@@ -84,5 +84,18 @@ function saveConcert($new_concert) {
     file_put_contents("../data.json", $new_json);
 }
 
+function getOldImageNames() {
+    $arrFiles = scandir('../uploads');
+    $images = [];
+    foreach ($arrFiles as $file) {
+      $ext = pathinfo($file, PATHINFO_EXTENSION);
+      // Get all jpg and jpeg files
+      if ($ext == "jpg" || $ext == "jpeg") {
+        array_push($images, $file);
+      }
+    }
+    return $images;
+  }
+
 
 ?>

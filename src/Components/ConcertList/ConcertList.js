@@ -5,7 +5,8 @@ import styles from "./ConcertList.module.css";
 
 export default function ConcertList({ concerts }) {
 
-    const concertsWithDates = concerts.map(c => ({ ...c, time: new Date(c.time) }));
+    const publishedConcerts = concerts.filter(c => c.published);
+    const concertsWithDates = publishedConcerts.map(c => ({ ...c, time: new Date(c.time) }));
     const now = new Date();
     const futureConcerts = concertsWithDates.filter(c => c.time >= now).sort((a, b) => { return a.time.getTime() - b.time.getTime()});
 
