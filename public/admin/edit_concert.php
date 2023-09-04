@@ -75,8 +75,6 @@ if (!empty($_POST)) {
 
   if (empty($_FILES["fileToUpload"]["name"])) {
 
-    print_r($_POST);
-
     // just update data, using old image file name
     $updated_concert = array(
       "id" => $id,
