@@ -1,4 +1,5 @@
 <?php include 'header.php'; ?>
+<?php include 'helpers.php'; ?>
 
 <?php if (empty($_POST)) { ?>
 
@@ -40,6 +41,11 @@
         <input type="text" class="form-control" id="admission" name="admission" aria-describedby="admissionHelp">
         <div id="admissionHelp" class="form-text">F.eks. <em>Gratis adgang</em> eller <em>Entré: 80 kr.</em></div>
       </div>
+      <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" name="published" id="published" >
+          <label class="form-check-label" for="published">Publiceret</label>
+        </div>
+
       <button type="submit" class="btn btn-primary mt-3">Opret</button>
     </form>
 
@@ -49,95 +55,53 @@
 }
 
 if (!empty($_POST)) {
-  if (
-    empty($_FILES["fileToUpload"]) ||
-    empty($_POST["title"]) ||
-    empty($_POST["date"]) ||
-    empty($_POST["time"]) ||
-    empty($_POST["place"]) ||
-    empty($_POST["link"]) ||
-    empty($_POST["admission"])
-  ) {
-    echo "<p style='color: red'>Alle felter skal udfyldes!</p>";
+
+  $published = $_POST["published"] == "on";
+
+  if (empty($_FILES["fileToUpload"]["name"])) {
+    
+    // If no image, just save data
+    $new_id = getNextId();
+
+    $new_concert = array(
+      "id" => $new_id,
+      "title" => $_POST["title"],
+      "time" => $_POST["date"] . "T" . $_POST["time"],
+      "place" => $_POST["place"],
+      "imageFileName" => "",
+      "link" => $_POST["link"],
+      "admission" => $_POST["admission"],
+      "published" => $published,
+    );
+
+    saveConcert($new_concert);
   } else {
-  
+    // Else also upload file
     $target_dir = "../uploads/";
     $image_name = basename($_FILES["fileToUpload"]["name"]);
     $target_file = $target_dir . $image_name;
-    $image_error = "";
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    // Check if image is not empty
-    if (empty($_FILES["fileToUpload"])) {
-      $image_error = "Du skal uploade et billede!";
-    }
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+      $new_id = getNextId();
 
-    // Check if image file is a actual image or fake image
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if ($check == false) {
-      $image_error = "Filen er ikke et billede";
-    }
+      $new_concert = array(
+        "id" => $new_id,
+        "title" => $_POST["title"],
+        "time" => $_POST["date"] . "T" . $_POST["time"],
+        "place" => $_POST["place"],
+        "imageFileName" => $image_name,
+        "link" => $_POST["link"],
+        "admission" => $_POST["admission"],
+        "published" => $published
+      );
+      
+      saveConcert($new_concert);
 
-    // Check if file already exists
-    if (file_exists($target_file)) {
-      $image_error = "Filen eksisterer allerede";
-    }
-
-    // Check file size
-    if ($_FILES["fileToUpload"]["size"] > 500000) {
-      $image_error = "Filen er for stor";
-    }
-
-    // Allow certain file formats
-    if (
-      $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-      && $imageFileType != "gif"
-    ) {
-      $image_error = "Beklager, kun JPG, JPEG, PNG & GIF filer er tilladt.";
-      $uploadOk = 0;
-    }
-
-    if ($image_error !== "") {
-      echo $image_error;
     } else {
-      if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-
-        $str = file_get_contents('../data.json');
-        $json = json_decode($str, true);
-
-        $concerts = $json["concerts"];
-
-
-        $ids = [];
-        foreach ($concerts as $concert) {
-          array_push($ids, $concert["id"]);
-        }
-
-        $new_id = max($ids) + 1;
-
-
-        $new_concert = array(
-          "id" => $new_id,
-          "title" => $_POST["title"],
-          "time" => $_POST["date"] . "T" . $_POST["time"],
-          "place" => $_POST["place"],
-          "imageFileName" => $image_name,
-          "link" => $_POST["link"],
-          "admission" => $_POST["admission"],
-        );
-        array_push($concerts, $new_concert);
-
-        $new_data = array(
-          "singer" => $json["singers"],
-          "concerts" => $concerts
-        );
-        $new_json = json_encode($new_data, JSON_PRETTY_PRINT);
-        file_put_contents("../data.json", $new_json);
-      } else {
-        echo "Der skete en fejl ved upload af billede";
-      }
+      echo "Der skete en fejl ved upload af billede";
     }
   }
+  echo "<p style='color: green'>Koncerten blev gemt !</p>";
 }
 ?>
 <?php include 'footer.php'; ?>
