@@ -3,7 +3,7 @@
 
 <?php if (empty($_POST)) {
   $images = getOldImageNames();
-  
+
 ?>
   <h2 class="m-5">Ny koncert</h2>
   <div class="m-5">
@@ -67,8 +67,6 @@
 }
 
 if (!empty($_POST)) {
-
-  print_r($_POST);
 
   $published = $_POST["published"] == "on";
 

@@ -1,20 +1,54 @@
 <?php include 'header.php'; ?>
+<?php include 'helpers.php'; ?>
 
 <?php
 
-// Get concerts from file
-$str = file_get_contents('../data.json');
-$json = json_decode($str, true);
-$concerts = $json["concerts"];
+$concerts = getConcerts();
+
+$upcoming = [];
+$old = [];
+
+$now = time();
+
+foreach ($concerts as $concert) {
+  $concert_date = strtotime($concert["time"]);
+  $isUpcoming = $concert["time"] !== "T" && $concert_date > $now;
+
+  if ($isUpcoming) {
+    array_push($upcoming, $concert);
+  } else {
+    array_push($old, $concert);
+  }
+}
 
 // Sort concerts by time
-usort($concerts, function ($a, $b) {
+usort($upcoming, function ($a, $b) {
+  return $b["time"] > $a["time"];
+});
+
+usort($old, function ($a, $b) {
   return $b["time"] > $a["time"];
 });
 
 echo ("<div class='m-5'>");
 
-foreach ($concerts as $concert) { ?>
+echo "<h3 class='mb-4'>Kommende koncerter</h2>";
+foreach ($upcoming as $concert) {
+  formatConcert($concert);
+}
+echo "<h3 class='mb-4'>Gamle koncerter</h2>";
+foreach ($old as $concert) {
+  formatConcert($concert);
+}
+echo ("</div>"); ?>
+
+<?php include 'footer.php'; ?>
+
+<?php
+function formatConcert($concert) {
+  
+  
+  ?>
   <div class='row mb-4 p-3 rounded shadow'>
     <div class='col-3 pt-2'>
       <img class='img-fluid' src=<?php echo "../uploads/" .  $concert["imageFileName"] ?> />
@@ -69,7 +103,6 @@ foreach ($concerts as $concert) { ?>
       </form>
     </div>
   </div>
-<?php }
-echo ("</div>"); ?>
-
-<?php include 'footer.php'; ?>
+<?php 
+}
+?>
