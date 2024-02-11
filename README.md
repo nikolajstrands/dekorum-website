@@ -1,74 +1,75 @@
 # dekorum-website
 
-Dette er websitet for Vokalensemblet Dekorum
+Dette er websitet for Vokalensemblet Dekorum. Det er skrevet i React med en administrativ backend i PHP. Al data er gemt i filer.
 
-## Getting Started with Create React App
+## Kom igang
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projektet er lavet med [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Tilgængelige scripts
 
-In the project directory, you can run:
+I projektmappen, kan man køre frontenden lokalt med:
 
-### `npm start`
+```shell
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Det kører frontenden i developer-mode på  [http://localhost:3000](http://localhost:3000).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```shell
+npm run build
+``````
 
-### `npm test`
+Bygger frontend-appen for produktion i mappen `build`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For at køre backenden lokalt, kan følgende docker-kommando benyttes:
 
-### `npm run build`
+```shell
+docker run -it --rm -p 80:80 --name dekorum-backend -v "$PWD"/public:/var/www/html php:7.2.2-apache
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Admin-modulet kan så tilgås på [http://localhost/admin](http://localhost/admin).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Backlog
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Site: Lav fallback på billeder, så de tilskæres korrekt (Koncert-billeder skal være 580 x 380 px.)
 
-### `npm run eject`
+- Generelt: Lav shell-script til byg og evt. deploy vha. SFTP.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Admin: Ret "Gamle koncerter" til "Tidligere koncerter"
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Admin: Lav billedgalleri, man kan vælge fra i stedet for liste med filnavne
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Admin: Formater tidspunkt for koncerter
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Admin: Redigere sangere
 
-## Learn More
+- Site: sangere med lange navne ...
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Generelt: Få afviklet al forbindelse til gammelt WP-tema og til ThemeHunk
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Site: Tilføj følgende css el.lign. til når man hover over et koncert-card (evt. også sanger-kort):box-shadow: 0 4px 12px 0 rgba(0,0,0,.4);
 
-### Code Splitting
+- Site: Gør noget ved koncert-cards. Undertitel, tagline, m.v.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Site: Kig på SEO
 
-### Analyzing the Bundle Size
+- Site: Head-data til præsentation af link på eksterne sider
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Site: Ny mailadresse
 
-### Making a Progressive Web App
+- Site: Skift evt. billeder
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Site: Evt. loading-spinner (fx logo!)
 
-### Advanced Configuration
+- Site: Testimonials
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Site: To-sproget hjemmeside eng/dan
 
-### Deployment
+- Site: Tekster rykket ud i fil
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Admin: Flere tekster kan redigeres dynamisk
 
-### `npm run build` fails to minify
+- Site: SoMe-integration?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Site: Hakkende grafik?
