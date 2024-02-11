@@ -12,6 +12,7 @@
 /build
 /public/data.json
 /public/assets
+/public/uploads
 
 # misc
 .DS_Store
