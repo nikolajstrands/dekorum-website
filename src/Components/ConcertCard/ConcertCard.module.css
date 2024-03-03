@@ -1,11 +1,16 @@
-/* 
-.imageWrapper {
-  filter: brightness(70%);
+
+.wrapper .imageWrapper {
+  filter: brightness(90%);
 }
 
-.imageWrapper:hover {
+.wrapper:hover .imageWrapper {
   filter: brightness(100%);
-} */
+}
+
+.imageWrapper {
+  aspect-ratio: 1.526;
+  overflow: hidden;
+}
 
 .wrapper {
   margin-bottom: 2em;
@@ -13,6 +18,10 @@
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
+}
+
+.wrapper:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .textWrapper {
