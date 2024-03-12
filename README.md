@@ -32,6 +32,8 @@ Admin-modulet kan så tilgås på [http://localhost/admin](http://localhost/admi
 
 ## Backlog
 
+- Site: Rul hover-style for koncerter tilbage?
+
 - Generelt: Lav shell-script til byg og evt. deploy vha. SFTP.
 
 - Admin: Ret "Gamle koncerter" til "Tidligere koncerter"
