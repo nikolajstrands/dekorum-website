@@ -32,8 +32,6 @@ Admin-modulet kan så tilgås på [http://localhost/admin](http://localhost/admi
 
 ## Backlog
 
-- Site: Lav fallback på billeder, så de tilskæres korrekt (Koncert-billeder skal være 580 x 380 px.)
-
 - Generelt: Lav shell-script til byg og evt. deploy vha. SFTP.
 
 - Admin: Ret "Gamle koncerter" til "Tidligere koncerter"
@@ -63,10 +61,6 @@ Admin-modulet kan så tilgås på [http://localhost/admin](http://localhost/admi
 - Site: Evt. loading-spinner (fx logo!)
 
 - Site: Testimonials
-
-- Site: To-sproget hjemmeside eng/dan
-
-- Site: Tekster rykket ud i fil
 
 - Admin: Flere tekster kan redigeres dynamisk
 
