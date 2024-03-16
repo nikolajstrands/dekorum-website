@@ -32,6 +32,14 @@ Admin-modulet kan så tilgås på [http://localhost/admin](http://localhost/admi
 
 ## Backlog
 
+- Site: Portrætbilleder i forkert størrelse skal croppes
+
+- Admin: Slette sangerbillede, når sanger slettes?
+
+- Site/Admin: manglende tid gør, at koncerten ikke vises
+
+- Admin: Billed-navn med mellemrum vises i admin
+
 - Site: Rul hover-style for koncerter tilbage?
 
 - Generelt: Lav shell-script til byg og evt. deploy vha. SFTP.

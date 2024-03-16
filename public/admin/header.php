@@ -18,8 +18,8 @@
       <div class="navbar-nav">
         <a class="nav-link" href="concerts.php">Alle koncerter</a>
         <a class="nav-link" href="new_concert.php">Opret koncert</a>
-        <!-- <a class="nav-link disabled" href="#">Alle sangere</a>
-        <a class="nav-link disabled" href="#">Opret sanger</a> -->
+        <a class="nav-link" href="singers.php">Alle sangere</a>
+        <a class="nav-link " href="new_singer.php">Opret sanger</a>
       </div>
     </div>
   </div>

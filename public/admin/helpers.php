@@ -97,5 +97,32 @@ function getOldImageNames() {
     return $images;
   }
 
+function getSingers() {
+  $str = file_get_contents('../data.json');
+  $json = json_decode($str, true);
+  return $json["singers"];
+}
+
+function deleteSingerById($id) {
+  $str = file_get_contents('../data.json');
+  $data = json_decode($str, true);
+
+  $singers = $data["singers"];
+  $new_singers = [];
+
+  foreach ($singers as $singer) {
+      if ($singer["id"] != $id) {
+          array_push($new_singers, $singer);
+      }
+  }
+
+  $new_data = array(
+      "singers" => $new_singers,
+      "concerts" => $data["concerts"]
+  );
+
+  $new_json = json_encode($new_data, JSON_PRETTY_PRINT);
+  file_put_contents("../data.json", $new_json);
+}
 
 ?>

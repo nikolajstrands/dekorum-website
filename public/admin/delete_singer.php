@@ -10,14 +10,14 @@ if (!empty($_POST)) {
         echo "Intet id sendt med!";
     } else {
 
-        deleteConcertById($id);
+        deleteSingerById($id);
 
 ?>
 
 <div class="alert alert-success" role="alert">
-    <strong>Koncerten blev slettet!</strong> Du sendes tilbage til koncertsiden ...
+    <strong>Sangeren blev slettet!</strong> Du sendes tilbage til sangersiden ...
   </div>
-  <script type ='text/javascript'> setTimeout(() => window.location = "/admin/concerts.php", 1500);</script>
+  <script type ='text/javascript'> setTimeout(() => window.location = "/admin/singers.php", 1500);</script>
 
 <?php
     }
