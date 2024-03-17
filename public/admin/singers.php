@@ -20,7 +20,7 @@ function formatSinger($singer) {
   ?>
   <div class='row mb-4 p-3 rounded shadow'>
     <div class='col-3 pt-2'>
-      <img class='img-fluid' src=<?php echo ".." .  $singer["portraitFileName"] ?> />
+      <img class='img-fluid' src=<?php echo "../uploads/portraits/" .  $singer["portraitFileName"] ?> />
     </div>
     <div class='col-6 ml-3'>
       <div class="d-flex flex-column">
@@ -47,9 +47,9 @@ function formatSinger($singer) {
         <input type="hidden" id="id" name="id" value=<?php echo ($singer["id"]) ?>>
         <button class="btn btn-danger w-100 p-3 mb-3" type="submit">Slet</button>
       </form>
-      <form method="get" action="edit_concert.php">
+      <form method="get" action="edit_singer.php">
         <input type="hidden" id="id" name="id" value=<?php echo ($singer["id"]) ?>>
-        <button disabled class="btn btn-primary w-100 p-3 mt-3">Rediger</button>
+        <button class="btn btn-primary w-100 p-3 mt-3">Rediger</button>
       </form>
     </div>
   </div>
