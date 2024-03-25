@@ -20,11 +20,13 @@ export default function ConcertCard({ concert }) {
     });
   }
 
+  const imageSrc = concert.imageFileName ? process.env.PUBLIC_URL + "/uploads/" + concert.imageFileName : "logo512.png";
+
   return (
     <a style={{ pointerEvents: concert.link === "" ? "none" : "inherit" }} href={concert.link} target="_blank" rel="noreferrer">
       <div className={styles.wrapper}>
         <div className={styles.imageWrapper}>
-          <Image fluid src={process.env.PUBLIC_URL + "/uploads/" + concert.imageFileName} />
+          <Image fluid src={imageSrc} />
         </div>
         <div className={styles.textWrapper}>
           <p className={styles.concertTitle}>{concert.title}</p>

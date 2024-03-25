@@ -10,13 +10,13 @@ import FadeInWhenVisible from "../../Animations/FadeInWhenVisible/FadeInWhenVisi
 
 export default function AboutPage({ data }) {
 
-    const unsortedSingers = data.singers;
+    const publishedSingers = data.singers.filter(singer => singer.published);
 
     const getSurname = (singer) => {
         return singer.name.split(" ").slice(-1)[0];
     }
     
-    const singers = unsortedSingers.sort((singerA, singerB) => {
+    const singers = publishedSingers.sort((singerA, singerB) => {
         const surnameA = getSurname(singerA);
         const surnameB = getSurname(singerB);
         return surnameA.localeCompare(surnameB);

@@ -34,6 +34,8 @@
 
 if (!empty($_POST)) {
 
+  $error = false;
+
   $published = $_POST["published"] == "on";
 
   if (empty($_FILES["fileToUpload"]["name"])) {
@@ -54,7 +56,8 @@ if (!empty($_POST)) {
     // Else also upload file
     $target_dir = "../uploads/portraits/";
     $image_name = basename($_FILES["fileToUpload"]["name"]);
-    $target_file = $target_dir . $image_name;
+    $sanitizedImageName = str_replace(" ", "_", $image_name);
+    $target_file = $target_dir . $sanitizedImageName;
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       $new_id = getNextSingerId();
@@ -63,17 +66,19 @@ if (!empty($_POST)) {
         "id" => $new_id,
         "name" => $_POST["name"],
         "part" => $_POST["part"],
-        "portraitFileName" => $image_name,
+        "portraitFileName" => $sanitizedImageName,
         "published" => $published
       );
 
       saveSinger($new_singer);
     } else {
       echo "Der skete en fejl ved upload af billede";
+      $error = true;
     }
   }
-  ?>
 
+  if ($error !== true) {
+  ?>
     <div class="alert alert-success" role="alert">
       <strong>Sangeren blevet oprettet!</strong> Du sendes tilbage til sangersiden ...
     </div>
@@ -81,6 +86,7 @@ if (!empty($_POST)) {
     setTimeout(() => window.location = "/admin/singers.php", 1500);
     </script>
   <?php
+  }
 }
   ?>
   <?php include 'footer.php'; ?>

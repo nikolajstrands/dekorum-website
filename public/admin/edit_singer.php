@@ -47,6 +47,8 @@ if (!empty($_GET)) {
 
 if (!empty($_POST)) {
 
+  $error = false;
+
   $id = $_POST["id"];
   $published = $_POST["published"] == "on";
 
@@ -66,29 +68,32 @@ if (!empty($_POST)) {
     // Update data and image-file
     $target_dir = "../uploads/portraits/";
     $image_name = basename($_FILES["fileToUpload"]["name"]);
-    $target_file = $target_dir . $image_name;
+    $sanitizedImageName = str_replace(" ", "_", $image_name);
+    $target_file = $target_dir . $sanitizedImageName;
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       $updated_singer = array(
         "id" => (int)$id,
         "name" => $_POST["name"],
         "part" => $_POST["part"],
-        "portraitFileName" => $image_name,
+        "portraitFileName" => $sanitizedImageName,
         "published" =>  $published
       );
 
       replaceSingerById($id, $updated_singer);
     } else {
       echo "Der skete en fejl ved upload af billede";
+      $error = true;
     }
   }
+  if ($error !== true) {
   ?>
-
   <div class="alert alert-success" role="alert">
     <strong>Sangeren blevet opdateret!</strong> Du sendes tilbage til sangersiden ...
   </div>
   <script type ='text/javascript'> setTimeout(() => window.location = "/admin/singers.php", 1500);</script>
 <?php
+  }
 }
 ?>
 <?php include 'footer.php'; ?>
