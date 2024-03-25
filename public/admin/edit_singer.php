@@ -26,7 +26,7 @@ if (!empty($_GET)) {
         <div class="mb-3">
           <label for="part" class="form-label">Stemmetype:</label>
           <input type="text" class="form-control" id="part" name="part" aria-describedby="partHelp" value="<?php echo $singer_to_edit["part"] ?>">
-          <div id="partHelp" class="form-text">F.eks. <em>Tenor</em></div>
+          <div id="partHelp" class="form-text">F.eks. <em>tenor</em></div>
         </div>
         <div class="mb-3">
           <label for="fileToUpload" class="form-label">Billedfil:</label>
@@ -54,7 +54,7 @@ if (!empty($_POST)) {
 
     // just update data, using old image file name
     $updated_singer = array(
-      "id" => $id,
+      "id" => (int)$id,
       "name" => $_POST["name"],
       "part" => $_POST["part"],
       "portraitFileName" => $_POST["oldImage"],
@@ -63,7 +63,6 @@ if (!empty($_POST)) {
     replaceSingerById($id, $updated_singer);
 
   } else {
-
     // Update data and image-file
     $target_dir = "../uploads/portraits/";
     $image_name = basename($_FILES["fileToUpload"]["name"]);
@@ -71,7 +70,7 @@ if (!empty($_POST)) {
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       $updated_singer = array(
-        "id" => $id,
+        "id" => (int)$id,
         "name" => $_POST["name"],
         "part" => $_POST["part"],
         "portraitFileName" => $image_name,
@@ -90,10 +89,6 @@ if (!empty($_POST)) {
   </div>
   <script type ='text/javascript'> setTimeout(() => window.location = "/admin/singers.php", 1500);</script>
 <?php
-
 }
-
-
 ?>
-
 <?php include 'footer.php'; ?>

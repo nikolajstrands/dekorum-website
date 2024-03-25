@@ -5,6 +5,13 @@
 
 $singers = getSingers();
 
+usort($singers, function ($a, $b) {
+  $lastNameA = end(explode(" ",  $a["name"]));
+  $lastNameB = end(explode(" ",  $b["name"]));
+  return $lastNameA > $lastNameB;
+});
+
+
 echo ("<div class='m-5'>");
 
 echo "<h3 class='mb-4'>Sangere</h2>";

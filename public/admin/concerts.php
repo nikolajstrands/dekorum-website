@@ -36,7 +36,7 @@ echo "<h3 class='mb-4'>Kommende koncerter</h2>";
 foreach ($upcoming as $concert) {
   formatConcert($concert);
 }
-echo "<h3 class='mb-4'>Gamle koncerter</h2>";
+echo "<h3 class='mb-4'>Tidligere koncerter</h2>";
 foreach ($old as $concert) {
   formatConcert($concert);
 }

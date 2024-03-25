@@ -93,7 +93,7 @@ if (!empty($_POST)) {
 
     // just update data, using old image file name
     $updated_concert = array(
-      "id" => $id,
+      "id" => (int)$id,
       "title" => $_POST["title"],
       "time" => $_POST["date"] . "T" . $_POST["time"],
       "place" => $_POST["place"],
@@ -113,7 +113,7 @@ if (!empty($_POST)) {
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       $updated_concert = array(
-        "id" => $id,
+        "id" => (int)$id,
         "title" => $_POST["title"],
         "time" => $_POST["date"] . "T" . $_POST["time"],
         "place" => $_POST["place"],
