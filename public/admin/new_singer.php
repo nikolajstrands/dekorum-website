@@ -14,12 +14,12 @@
       <div class="mb-3">
         <label for="part" class="form-label">Stemmetype:</label>
         <input type="text" class="form-control" id="part" name="part" aria-describedby="partHelp">
-        <div id="partHelp" class="form-text">F.eks. <em>Tenor</em></div>
+        <div id="partHelp" class="form-text">F.eks. <em>tenor</em></div>
       </div>
       <div class="mb-3">
         <label for="fileToUpload" class="form-label">Billedfil:</label>
         <input type="file" class="form-control" id="fileToUpload" name="fileToUpload" aria-describedby="fileToUploadHelp">
-        <div id="fileToUploadHelp" class="form-text">Skal være jpg eller jpeg og størrelsen 480 x 600 pixel. Undlades billede, bruges dummy-billede</div>
+        <div id="fileToUploadHelp" class="form-text">Skal være jpg eller jpeg og størrelsen 480 x 600 pixel. Undlades billede, indsættes dummy-billede</div>
       </div>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" role="switch" name="published" id="published">
