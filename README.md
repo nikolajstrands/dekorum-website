@@ -32,23 +32,13 @@ Admin-modulet kan så tilgås på [http://localhost/admin](http://localhost/admi
 
 ## Backlog
 
-- Site: Rul hover-style for koncerter tilbage?
+- Admin: Slette sangerbillede, når sanger slettes?
 
 - Generelt: Lav shell-script til byg og evt. deploy vha. SFTP.
 
-- Admin: Ret "Gamle koncerter" til "Tidligere koncerter"
-
 - Admin: Lav billedgalleri, man kan vælge fra i stedet for liste med filnavne
 
-- Admin: Formater tidspunkt for koncerter
-
-- Admin: Redigere sangere
-
-- Site: sangere med lange navne ...
-
 - Generelt: Få afviklet al forbindelse til gammelt WP-tema og til ThemeHunk
-
-- Site: Tilføj følgende css el.lign. til når man hover over et koncert-card (evt. også sanger-kort):box-shadow: 0 4px 12px 0 rgba(0,0,0,.4);
 
 - Site: Gør noget ved koncert-cards. Undertitel, tagline, m.v.
 
@@ -56,16 +46,6 @@ Admin-modulet kan så tilgås på [http://localhost/admin](http://localhost/admi
 
 - Site: Head-data til præsentation af link på eksterne sider
 
-- Site: Ny mailadresse
-
-- Site: Skift evt. billeder
-
-- Site: Evt. loading-spinner (fx logo!)
-
-- Site: Testimonials
-
 - Admin: Flere tekster kan redigeres dynamisk
-
-- Site: SoMe-integration?
 
 - Site: Hakkende grafik?

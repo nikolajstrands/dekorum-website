@@ -86,16 +86,18 @@ if (!empty($_GET)) {
 
 if (!empty($_POST)) {
 
+  $error = false;
+
   $id = $_POST["id"];
   $published = $_POST["published"] == "on";
-
+  
   if (empty($_FILES["fileToUpload"]["name"])) {
 
     // just update data, using old image file name
     $updated_concert = array(
-      "id" => $id,
+      "id" => (int)$id,
       "title" => $_POST["title"],
-      "time" => $_POST["date"] . "T" . $_POST["time"],
+      "time" => $_POST["time"] ? $_POST["date"] . "T" . $_POST["time"] : $_POST["date"],
       "place" => $_POST["place"],
       "imageFileName" => $_POST["oldImage"] == "0" ? "" : $_POST["oldImage"],
       "link" => $_POST["link"],
@@ -109,15 +111,16 @@ if (!empty($_POST)) {
     // Update data and image-file
     $target_dir = "../uploads/";
     $image_name = basename($_FILES["fileToUpload"]["name"]);
-    $target_file = $target_dir . $image_name;
+    $sanitizedImageName = str_replace(" ", "_", $image_name);
+    $target_file = $target_dir . $sanitizedImageName;
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       $updated_concert = array(
-        "id" => $id,
+        "id" => (int)$id,
         "title" => $_POST["title"],
-        "time" => $_POST["date"] . "T" . $_POST["time"],
+        "time" => $_POST["time"] ? $_POST["date"] . "T" . $_POST["time"] : $_POST["date"],
         "place" => $_POST["place"],
-        "imageFileName" => $image_name,
+        "imageFileName" => $sanitizedImageName,
         "link" => $_POST["link"],
         "admission" => $_POST["admission"],
         "published" =>  $published
@@ -125,16 +128,18 @@ if (!empty($_POST)) {
 
       replaceConcertById($id, $updated_concert);
     } else {
-      echo "Der skete en fejl ved upload af billede";
+      echo "Der skete en fejl ved upload af billede"; 
+      $error = true;
     }
   }
+  if ($error !== true) {
   ?>
-
   <div class="alert alert-success" role="alert">
     <strong>Koncerten blevet opdateret!</strong> Du sendes tilbage til koncertsiden ...
   </div>
   <script type ='text/javascript'> setTimeout(() => window.location = "/admin/concerts.php", 1500);</script>
 <?php
+  }
 
 }
 

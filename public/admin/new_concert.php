@@ -68,6 +68,8 @@
 
 if (!empty($_POST)) {
 
+  $error = false;
+
   $published = $_POST["published"] == "on";
 
   if (empty($_FILES["fileToUpload"]["name"])) {
@@ -78,7 +80,7 @@ if (!empty($_POST)) {
     $new_concert = array(
       "id" => $new_id,
       "title" => $_POST["title"],
-      "time" => $_POST["date"] . "T" . $_POST["time"],
+      "time" => $_POST["time"] ? $_POST["date"] . "T" . $_POST["time"] : $_POST["date"],
       "place" => $_POST["place"],
       "imageFileName" => $_POST["oldImage"] == "0" ? "" : $_POST["oldImage"],
       "link" => $_POST["link"],
@@ -91,7 +93,8 @@ if (!empty($_POST)) {
     // Else also upload file
     $target_dir = "../uploads/";
     $image_name = basename($_FILES["fileToUpload"]["name"]);
-    $target_file = $target_dir . $image_name;
+    $sanitizedImageName = str_replace(" ", "_", $image_name);
+    $target_file = $target_dir . $sanitizedImageName;
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       $new_id = getNextId();
@@ -99,9 +102,9 @@ if (!empty($_POST)) {
       $new_concert = array(
         "id" => $new_id,
         "title" => $_POST["title"],
-        "time" => $_POST["date"] . "T" . $_POST["time"],
+        "time" => $_POST["time"] ? $_POST["date"] . "T" . $_POST["time"] : $_POST["date"],
         "place" => $_POST["place"],
-        "imageFileName" => $image_name,
+        "imageFileName" => $sanitizedImageName,
         "link" => $_POST["link"],
         "admission" => $_POST["admission"],
         "published" => $published
@@ -110,9 +113,10 @@ if (!empty($_POST)) {
       saveConcert($new_concert);
     } else {
       echo "Der skete en fejl ved upload af billede";
+      $error = true;
     }
   }
-
+  if ($error !== true) {
   ?>
 
     <div class="alert alert-success" role="alert">
@@ -122,6 +126,7 @@ if (!empty($_POST)) {
     setTimeout(() => window.location = "/admin/concerts.php", 1500);
     </script>
   <?php
+  }
 }
   ?>
   <?php include 'footer.php'; ?>

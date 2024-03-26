@@ -36,7 +36,7 @@ echo "<h3 class='mb-4'>Kommende koncerter</h2>";
 foreach ($upcoming as $concert) {
   formatConcert($concert);
 }
-echo "<h3 class='mb-4'>Gamle koncerter</h2>";
+echo "<h3 class='mb-4'>Tidligere koncerter</h2>";
 foreach ($old as $concert) {
   formatConcert($concert);
 }
@@ -66,7 +66,7 @@ function formatConcert($concert) {
 
         <div class="d-flex flex-row pb-1">
           <div class="w-25 fw-bold">Tidspunkt</div>
-          <div><?php echo $concert["time"] ?></div>
+          <div><?php echo date_format(date_create($concert["time"]), "j/n/Y, G:H") ?></div>
         </div>
 
         <div class="d-flex flex-row pb-1">
