@@ -30,20 +30,21 @@ Admin-modulet kan så tilgås på [http://localhost/admin](http://localhost/admi
 
 ## Deploy
 
+Følgende kommando bygger en optimeret produktionsudgave af frontend-appen i mappen `build`:
+
 ```shell
 npm run build
 ``````
 
-Bygger frontend-appen for produktion i mappen `build`.
-
 Filerne kan så kopieres over på serveren vha. en FTP-klient, såsom Cyberduck.
 
-Alt indhold i `build` kopieres, undtagen:
-- mapperne `assets` og  `uploads` med indhold
-- Mappen `admin` (dog indhold)
-- filen `data.json`
+Gør følgende for at sikre, at data og filer ikke overskrives utilsigtet:
 
-Vigtigt! PHP-filerne kopieres uden `admin`-mappen, så det undgås at `.htaccess` og `.htpasswd`, som styrer adgang til administrationsmodulet, forsvinder fra serveren.
+1) I mappen `build` (ikke i public!) slettes mapperne `assets` og  `uploads` med alt indhold, samt filen `data.json`.
+2) Alt indhold i `build`undtagen `admin`-mappen kopieres til roden af serveren.
+3) *Hvis* der er lavet rettelser i php-koden, kopieres *indholdet* af `admin`-mappen til `admin`-mappen på serveren. Ellers ignoreres denne.
+
+Vigtigt! PHP-filerne kopieres uden selve `admin`-mappen, så det undgås at filerne `.htaccess` og `.htpasswd`, som styrer adgang til administrationsmodulet, forsvinder fra serveren.
 
 ## Backlog
 
