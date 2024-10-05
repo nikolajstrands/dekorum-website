@@ -24,8 +24,8 @@ export default function ContactPage() {
                             følgende telefon eller mail:
                         </p>
                         <p className={styles.center}>
-                            <a className={styles.link} target="_blank" rel="noreferrer" href="tel:4521258566">
-                                <Telephone className={styles.icon} /> (+45) 21 25 85 66<br />
+                            <a className={styles.link} target="_blank" rel="noreferrer" href="tel:4522522253">
+                                <Telephone className={styles.icon} /> (+45) 22 52 22 53<br />
                             </a>
                             <a className={styles.link} target="_blank" rel="noreferrer" href="mailto:vokalensembletdekorum@gmail.com">
                                 <Envelope className={styles.icon} />vokalensembletdekorum@gmail.com<br />

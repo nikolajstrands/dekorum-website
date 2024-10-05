@@ -53,7 +53,7 @@ export default function AboutPage({ data }) {
                     </Container>
                 </FadeInWhenVisible>
             </Ribbon>
-            <Ribbon light={true} header="Kunstnerisk ledelse">
+            {/* <Ribbon light={true} header="Kunstnerisk ledelse">
                 <Row>
                     <div className={`col-12 col-sm-6 col-md-6 ${styles.imageWrapper}`}>
                         <FadeInWhenVisible direction="right">
@@ -72,8 +72,8 @@ export default function AboutPage({ data }) {
                         </FadeInWhenVisible>
                     </div>
                 </Row>
-            </Ribbon>
-            <Footer light={false} />
+            </Ribbon> */}
+            <Footer light />
         </PageFadeIn>
     );
 }
