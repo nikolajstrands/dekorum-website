@@ -68,7 +68,7 @@ export default function HomePage({ data }) {
                             <div className={styles.aboutTextWrapper}>
                                 <p><strong>Vokalensemblet Dekorum</strong> er en ambitiøs gruppe bestående af unge, erfarne korsangere. Med et erklæret mål om at være en skabende del af det danske musikliv arbejder koret for at bidrage med noget nyt og spændende ved hver eneste koncert.</p>
                                 <p>Om det skabende består i opførelser af overset eller glemt musik, nye arrangementer af det kendte og elskede eller helt ny musik komponeret specielt til gruppen, varierer. Men fælles for det hele er en anderledes måde at præsentere klassisk kormusik på – i al beskedenhed.</p>
-                                <p>Vokalensemblet, der ledes af <strong>Bo Asger Kristensen</strong>, arbejder sammen med nogle af landets mest talentfulde komponister og musikere og har flere udgivelser bag sig.</p>
+                                {/* <p>Vokalensemblet, der ledes af <strong>Bo Asger Kristensen</strong>, arbejder sammen med nogle af landets mest talentfulde komponister og musikere og har flere udgivelser bag sig.</p> */}
                             </div>
                             <div className={styles.linkWrapper}>
                                 <InternalLink to="om-os" text="Læs mere om koret" />
