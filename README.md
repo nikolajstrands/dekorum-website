@@ -6,20 +6,25 @@ Dette er websitet for Vokalensemblet Dekorum. Det er skrevet i React med en admi
 
 Projektet er lavet med [Create React App](https://github.com/facebook/create-react-app).
 
+For at køre projektet lokalt, klones GitHub-projekt ned, og afhængigheder installeres (kræver at NodeJS er installeret på maskinen):
+
+```shell
+npm install
+```
+
 I projektmappen, kan man køre frontenden lokalt med:
 
 ```shell
 npm start
 ```
 
-Det kører frontenden i developer-mode på  [http://localhost:3000](http://localhost:3000).
+Det kører frontenden i developer-mode på [http://localhost:3000](http://localhost:3000).
 
-For at køre backenden lokalt, kan følgende docker-kommando benyttes:
+For at køre backenden lokalt, kan følgende docker-kommando benyttes (Kræver at Docker er installeret på maskinen):
 
 ```shell
 docker run -it --rm -p 80:80 --name dekorum-backend -v "$PWD"/public:/var/www/html php:7.2.2-apache
 ```
- 
 
 Admin-modulet kan så tilgås på [http://localhost/admin](http://localhost/admin).
 
@@ -31,7 +36,7 @@ npm run build
 
 Bygger frontend-appen for produktion i mappen `build`.
 
-Filerne kan så kopieres over på serveren vha. Cyberduck.
+Filerne kan så kopieres over på serveren vha. en FTP-klient, såsom Cyberduck.
 
 Alt indhold i `build` kopieres, undtagen:
 - mapperne `assets` og  `uploads` med indhold
