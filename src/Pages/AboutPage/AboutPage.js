@@ -15,8 +15,14 @@ export default function AboutPage({ data }) {
     const getSurname = (singer) => {
         return singer.name.split(" ").slice(-1)[0];
     }
-    
+
     const singers = publishedSingers.sort((singerA, singerB) => {
+        if (singerA.name === "Vakant") {
+            return 1;
+        }
+        if (singerB.name === "Vakant") {
+            return -1;
+        }
         const surnameA = getSurname(singerA);
         const surnameB = getSurname(singerB);
         return surnameA.localeCompare(surnameB);
